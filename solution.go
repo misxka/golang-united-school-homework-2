@@ -14,19 +14,19 @@ import (
 
 type Amount int
 
-func CalcSquare(sideLen float64, sidesNum Amount) float64 {
-	const (
-		sidesTriangle = 3
-		sidesSquare   = 4
-		sidesCircle   = 0
-	)
+const (
+	SidesTriangle Amount = 3
+	SidesSquare   Amount = 4
+	SidesCircle   Amount = 0
+)
 
+func CalcSquare(sideLen float64, sidesNum Amount) float64 {
 	switch sidesNum {
-	case sidesSquare:
+	case SidesSquare:
 		return math.Pow(sideLen, 2)
-	case sidesTriangle:
+	case SidesTriangle:
 		return math.Sqrt(3) * math.Pow(sideLen, 2) / 4
-	case sidesCircle:
+	case SidesCircle:
 		return math.Pi * math.Pow(sideLen, 2)
 	default:
 		return 0
